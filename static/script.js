@@ -10,7 +10,7 @@ const colores = [
 ];
 
 
-let parejaColor = 0;
+let color_pareja = 0;
 
 caja.addEventListener("keydown", (e)=>{
     if (e.key === "Enter"){
@@ -19,36 +19,11 @@ caja.addEventListener("keydown", (e)=>{
 })
 
 boton.addEventListener("click", () => {
-    const colorActual = colores[parejaColor];
+    const colorActual = colores[color_pareja];
     caja.style.backgroundColor = colorActual.fondo;
     caja.style.color = colorActual.texto;
 
-    parejaColor = (parejaColor + 1) % colores.length;
+    color_pareja = (color_pareja + 1) % colores.length;
 })
 
 
-
-// const caja = document.getElementById('caja');
-// const boton = document.getElementById('colorBtn');
-
-// const colores = [
-//   { fondo: 'white', texto: 'black' },
-//   { fondo: 'black', texto: 'white' },
-//   { fondo: 'skyblue', texto: 'red' }
-// ];
-
-// let indiceColor = 0;
-
-// caja.addEventListener('keydown', (e) => {
-//   if (e.key === 'Enter') {
-//     alert(`Texto ingresado: ${caja.value}`);
-//   }
-// });
-
-// boton.addEventListener('click', () => {
-//   const colorActual = colores[indiceColor];
-//   caja.style.backgroundColor = colorActual.fondo;
-//   caja.style.color = colorActual.texto;
-
-//   indiceColor = (indiceColor + 1) % colores.length;
-// });
