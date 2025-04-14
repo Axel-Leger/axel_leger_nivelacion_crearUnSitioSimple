@@ -2,6 +2,11 @@ const caja = document.getElementById("caja")
 const boton = document.getElementById("colorBtn")
 
 
+caja.addEventListener("keydown", (e)=>{
+    if (e.key === "Enter"){
+        alert(`Texto ingresado: ${caja.value}` )
+    }
+})
 
 const colores = [
     {fondo: "white", texto: "black" },
@@ -9,17 +14,11 @@ const colores = [
     {fondo: "skyblue", texto: "red" }
 ];
 
-
-let color_pareja = 0;
-
-caja.addEventListener("keydown", (e)=>{
-    if (e.key === "Enter"){
-        alert(`Texto ingresado: ${caja.value}` )
-    }
-})
+let color_pareja = 1;
 
 boton.addEventListener("click", () => {
     const colorActual = colores[color_pareja];
+
     caja.style.backgroundColor = colorActual.fondo;
     caja.style.color = colorActual.texto;
 
